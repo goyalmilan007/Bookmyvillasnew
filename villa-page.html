@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valiyaveetil Mansion | ELIVAAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: #f7f2eb;
+      }
+      .villa-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255,255,255,0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+      }
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      .brand {
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        color: #1f2430;
+        text-decoration: none;
+      }
+      .villa-nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .villa-nav a {
+        color: #4b4b4b;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .villa-hero {
+        position: relative;
+        min-height: 86vh;
+        overflow: hidden;
+        color: white;
+      }
+      .villa-slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
+      .villa-slide.active {
+        opacity: 1;
+      }
+      .villa-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(14,18,24,0.72), rgba(14,18,24,0.28));
+      }
+      .villa-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        align-items: end;
+        padding: 2rem 0 3rem;
+      }
+      .villa-content .container {
+        width: min(1200px, calc(100% - 2rem));
+      }
+      .villa-badges {
+        display: flex;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+      .villa-badges span {
+        background: rgba(255,255,255,0.16);
+        border: 1px solid rgba(255,255,255,0.25);
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        backdrop-filter: blur(5px);
+        font-size: 0.9rem;
+      }
+      .villa-details {
+        width: min(1200px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+        display: grid;
+        gap: 1.5rem;
+      }
+      .detail-card {
+        background: white;
+        border-radius: 28px;
+        padding: 1.6rem;
+        box-shadow: 0 18px 42px rgba(0,0,0,0.08);
+      }
+      .amenities {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .amenity {
+        background: linear-gradient(135deg, #f9f3e8 0%, #f3e2c7 100%);
+        border-radius: 18px;
+        padding: 1rem;
+        border: 1px solid rgba(176,122,61,0.16);
+      }
+      .booking-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        background: linear-gradient(135deg, #fffdf9 0%, #f6e8d3 100%);
+      }
+      .booking-btn {
+        background: #b07a3d;
+        color: white;
+        text-decoration: none;
+        padding: 0.9rem 1.2rem;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+      .booking-form {
+        display: grid;
+        gap: 1rem;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .booking-form label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+      }
+      .booking-form input,
+      .booking-form select,
+      .booking-form textarea,
+      .booking-form button {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 0.8rem 0.9rem;
+        font: inherit;
+      }
+      .booking-form button {
+        background: linear-gradient(135deg, #b07a3d 0%, #9b5d22 100%);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .quick-actions {
+        position: fixed;
+        right: 1rem;
+        bottom: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        z-index: 30;
+      }
+      .quick-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+        font-size: 1.2rem;
+      }
+      .quick-action.whatsapp {
+        background: #25D366;
+      }
+      .quick-action.phone {
+        background: #b07a3d;
+      }
+      .villa-footer {
+        background: #12151d;
+        color: rgba(255,255,255,0.9);
+        padding: 2.5rem 0;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 2rem;
+      }
+      .villa-footer a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        margin: 0.35rem 0;
+      }
+      @media (max-width: 760px) {
+        .amenities {
+          grid-template-columns: 1fr;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .header-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.6rem;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 760px) {
+        .amenities {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="villa-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">ELIVAAS</a>
+        <nav class="villa-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#villas">Villas</a>
+          <a href="privacy-policy.html">Policies</a>
+          <a href="mailto:hello@elivaas.com">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="villa-hero">
+      <div class="villa-slide active" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="villa-slide" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="villa-slide" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="villa-overlay"></div>
+      <div class="villa-content">
+        <div class="container">
+          <div class="villa-badges">
+            <span>5-BHK Villa</span>
+            <span>Private Pool</span>
+            <span>Home Theatre</span>
+            <span>Garden</span>
+          </div>
+          <h1>Valiyaveetil Mansion</h1>
+          <p>Luxury villa in Kochi with panoramic interiors, premium amenities, and serene surroundings.</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="villa-details">
+      <div class="detail-card booking-box">
+        <div>
+          <h2>From ₹45,000 / night</h2>
+          <p>Ideal for families, celebrations, and peaceful retreats.</p>
+        </div>
+        <a class="booking-btn" href="mailto:hello@elivaas.com">Book Now</a>
+      </div>
+
+      <div class="detail-card">
+        <h2>About the Villa</h2>
+        <p>Discover a refined private residence crafted for comfort, privacy, and memorable experiences. The villa blends modern luxury with warm hospitality, offering spacious interiors and thoughtful design in every corner.</p>
+      </div>
+
+      <div class="detail-card">
+        <h2>Amenities</h2>
+        <div class="amenities">
+          <div class="amenity"><strong>Private Pool</strong><br />Relax in complete privacy.</div>
+          <div class="amenity"><strong>Home Theatre</strong><br />Enjoy movies in a premium setting.</div>
+          <div class="amenity"><strong>Garden</strong><br />Outdoor lounging and peaceful evenings.</div>
+          <div class="amenity"><strong>Housekeeping</strong><br />Round-the-clock support.</div>
+          <div class="amenity"><strong>Wi-Fi</strong><br />Fast and reliable connection.</div>
+          <div class="amenity"><strong>Parking</strong><br />Ample space for your vehicles.</div>
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Spacious open-plan living with luxury interiors</li>
+          <li>Private outdoor pool and landscaped garden</li>
+          <li>Perfect for family stays, birthdays, and wellness retreats</li>
+          <li>Easy access to nearby attractions and city comforts</li>
+        </ul>
+      </div>
+
+      <div class="detail-card">
+        <h2>Book Your Stay</h2>
+        <form class="booking-form">
+          <div class="form-grid">
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" type="text" placeholder="Enter your name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Enter your email" />
+            </div>
+            <div>
+              <label for="checkin">Check-in</label>
+              <input id="checkin" type="date" />
+            </div>
+            <div>
+              <label for="checkout">Check-out</label>
+              <input id="checkout" type="date" />
+            </div>
+            <div>
+              <label for="guests">Guests</label>
+              <select id="guests">
+                <option>2 Guests</option>
+                <option>4 Guests</option>
+                <option>6 Guests</option>
+                <option>8 Guests</option>
+              </select>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" placeholder="Enter phone number" />
+            </div>
+          </div>
+          <label for="message">Special Request</label>
+          <textarea id="message" rows="4" placeholder="Tell us about your plans or preferences"></textarea>
+          <button type="submit">Send Booking Request</button>
+        </form>
+      </div>
+    </main>
+
+    <div class="quick-actions" aria-label="Quick contact actions">
+      <a class="quick-action whatsapp" href="https://wa.me/919220832244" target="_blank" rel="noopener" aria-label="Contact via WhatsApp">✆</a>
+      <a class="quick-action phone" href="tel:+919220832244" aria-label="Call us">☎</a>
+    </div>
+
+    <footer class="villa-footer">
+      <div class="container footer-inner">
+        <div>
+          <h3>ELIVAAS</h3>
+          <p>Your second home becomes a curated escape expertly managed and beautifully maintained.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="return-policy.html">Return Policy</a>
+          <a href="terms-and-conditions.html">Terms & Conditions</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@elivaas.com">hello@elivaas.com</a>
+          <a href="tel:+919220832244">+91 92208 32244</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const slides = Array.from(document.querySelectorAll('.villa-slide'));
+      let currentSlide = 0;
+      setInterval(() => {
+        slides.forEach((slide, index) => {
+          slide.classList.toggle('active', index === currentSlide);
+        });
+        currentSlide = (currentSlide + 1) % slides.length;
+      }, 4000);
+    </script>
+  </body>
+</html>

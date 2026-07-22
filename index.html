@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELIVAAS — Luxury Villas & Escapes</title>
+    <meta
+      name="description"
+      content="Luxury villas, curated stays, and seamless experiences for your next escape."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-slider" aria-label="Featured destination slides">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80');"></div>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <nav class="nav container">
+        <a class="brand" href="#">ELIVAAS</a>
+        <div class="nav-links">
+          <a href="#villas">Villas</a>
+          <a href="#offers">Offers</a>
+          <a href="#stories">Stories</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <p class="eyebrow">Curated luxury stays</p>
+          <h1>Find your perfect escape.</h1>
+          <p class="lead">
+            Discover handpicked villas in breathtaking destinations with bespoke
+            hospitality, private pools, and extraordinary experiences.
+          </p>
+
+          <form class="search-card">
+            <div>
+              <label>Location</label>
+              <input type="text" placeholder="Search city, villa or destination" />
+            </div>
+            <div>
+              <label>Check in</label>
+              <input type="date" />
+            </div>
+            <div>
+              <label>Guests</label>
+              <select>
+                <option>2 Guests</option>
+                <option>4 Guests</option>
+                <option>6 Guests</option>
+                <option>8 Guests</option>
+              </select>
+            </div>
+            <button type="submit">Explore</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="hero-dots container" aria-label="Slide navigation">
+        <button class="dot active" data-slide="0" aria-label="Show slide 1"></button>
+        <button class="dot" data-slide="1" aria-label="Show slide 2"></button>
+        <button class="dot" data-slide="2" aria-label="Show slide 3"></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="chip-bar container">
+        <span>All</span>
+        <span>Beach Retreats</span>
+        <span>Urban Getaways</span>
+        <span>Mountain Escapes</span>
+        <span>Wildlife Retreats</span>
+        <span>Heritage Trails</span>
+        <span>Soulful Getaways</span>
+      </section>
+
+      <section class="ota-section container">
+        <div class="section-heading">
+          <p class="eyebrow">Popular OTA partners</p>
+          <h2>Trusted booking platforms</h2>
+        </div>
+        <div class="ota-carousel">
+          <button class="carousel-btn prev" type="button" aria-label="Scroll left">‹</button>
+          <div class="ota-track">
+            <div class="ota-logo logo-booking" aria-label="Booking.com">
+              <svg viewBox="0 0 256 64" role="img" aria-hidden="true">
+                <rect x="0" y="0" width="256" height="64" rx="12" fill="transparent"></rect>
+                <path d="M42 20h20c10 0 18 8 18 18s-8 18-18 18H42V20z" fill="#003580"></path>
+                <path d="M78 20h20c10 0 18 8 18 18s-8 18-18 18H78V20z" fill="#0071c2"></path>
+                <path d="M114 20h20c10 0 18 8 18 18s-8 18-18 18h-20V20z" fill="#ffb700"></path>
+                <text x="148" y="39" font-size="22" font-family="Arial, sans-serif" fill="#003580">Booking.com</text>
+              </svg>
+            </div>
+            <div class="ota-logo logo-airbnb" aria-label="Airbnb">
+              <svg viewBox="0 0 220 60" role="img" aria-hidden="true">
+                <path d="M40 20c8-8 20-8 28 0l5 5c4 4 10 6 16 6h18c10 0 18 8 18 18s-8 18-18 18H89c-6 0-12 2-16 6l-5 5c-8 8-20 8-28 0-8-8-8-20 0-28l5-5-5-5c-8-8-8-20 0-28z" fill="#ff5a5f"></path>
+                <text x="96" y="38" font-size="24" font-family="Arial, sans-serif" fill="#ff5a5f">airbnb</text>
+              </svg>
+            </div>
+            <div class="ota-logo logo-mmt" aria-label="MakeMyTrip">
+              <svg viewBox="0 0 240 60" role="img" aria-hidden="true">
+                <rect x="6" y="10" width="54" height="40" rx="10" fill="#e53935"></rect>
+                <path d="M20 18h22v6H20zM20 28h22v6H20zM20 38h22v6H20z" fill="white"></path>
+                <text x="72" y="38" font-size="22" font-family="Arial, sans-serif" fill="#e53935">MakeMyTrip</text>
+              </svg>
+            </div>
+            <div class="ota-logo logo-goibibo" aria-label="Goibibo">
+              <svg viewBox="0 0 220 60" role="img" aria-hidden="true">
+                <rect x="8" y="12" width="48" height="36" rx="8" fill="#0f6bff"></rect>
+                <circle cx="32" cy="30" r="12" fill="white"></circle>
+                <text x="72" y="38" font-size="24" font-family="Arial, sans-serif" fill="#0f6bff">goibibo</text>
+              </svg>
+            </div>
+            <div class="ota-logo logo-tripadvisor" aria-label="Tripadvisor">
+              <svg viewBox="0 0 240 60" role="img" aria-hidden="true">
+                <circle cx="34" cy="30" r="16" fill="#00aa6c"></circle>
+                <path d="M24 30h20" stroke="white" stroke-width="4" stroke-linecap="round"></path>
+                <text x="70" y="38" font-size="22" font-family="Arial, sans-serif" fill="#00aa6c">Tripadvisor</text>
+              </svg>
+            </div>
+            <div class="ota-logo logo-agoda" aria-label="Agoda">
+              <svg viewBox="0 0 220 60" role="img" aria-hidden="true">
+                <rect x="10" y="12" width="48" height="36" rx="8" fill="#ff5e14"></rect>
+                <path d="M24 22h18v16H24z" fill="white"></path>
+                <text x="72" y="38" font-size="24" font-family="Arial, sans-serif" fill="#ff5e14">Agoda</text>
+              </svg>
+            </div>
+          </div>
+          <button class="carousel-btn next" type="button" aria-label="Scroll right">›</button>
+        </div>
+      </section>
+
+      <section id="offers" class="offers container">
+        <div class="section-heading">
+          <p class="eyebrow">Offers curated just for you</p>
+          <h2>Exceptional perks and seasonal deals</h2>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-card">
+            <h3>Stay for 3, pay for 2 nights</h3>
+            <p>Enjoy a complimentary night on select luxury stays.</p>
+            <a href="#">Learn more</a>
+          </article>
+          <article class="offer-card">
+            <h3>Kotak Bank Offer</h3>
+            <p>Extra 10% instant discount up to ₹50,000.</p>
+            <a href="#">Learn more</a>
+          </article>
+          <article class="offer-card">
+            <h3>ICICI EMI Offer</h3>
+            <p>No-cost EMI and additional savings on luxury bookings.</p>
+            <a href="#">Learn more</a>
+          </article>
+          <article class="offer-card">
+            <h3>Axis Bank Offer</h3>
+            <p>Instant discounts on premium villa stays and retreats.</p>
+            <a href="#">Learn more</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="villas" class="featured container">
+        <div class="section-heading">
+          <p class="eyebrow">Rain-kissed escapes</p>
+          <h2>Villas crafted for memory-making stays</h2>
+        </div>
+        <div class="card-grid">
+          <article class="property-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Luxury villa with pool" />
+            <div class="card-content">
+              <h3>Valiyaveetil Mansion</h3>
+              <p>5-BHK mansion with private pool, home theatre, and garden.</p>
+              <span>Near Kochi</span>
+              <br />
+              <a href="villa-page.html" class="view-link">View Villa</a>
+            </div>
+          </article>
+          <article class="property-card">
+            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Villa in mountain resort" />
+            <div class="card-content">
+              <h3>Mountain Creek Retreat</h3>
+              <p>Pet-friendly ultra-luxe suite with shared pool and scenic views.</p>
+              <span>Near Udaipur</span>
+            </div>
+          </article>
+          <article class="property-card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80" alt="Luxury villa in the hills" />
+            <div class="card-content">
+              <h3>Royce Cottage</h3>
+              <p>Hilltop villa with indoor bar, terrace, and panoramic views.</p>
+              <span>Near Kasauli</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="stats-section">
+        <div class="container stats-grid">
+          <div>
+            <h3>42,000+</h3>
+            <p>5-star reviews</p>
+          </div>
+          <div>
+            <h3>700+</h3>
+            <p>Portfolio properties</p>
+          </div>
+          <div>
+            <h3>24x7</h3>
+            <p>Seven-star services</p>
+          </div>
+          <div>
+            <h3>4.25 Lacs+</h3>
+            <p>Delighted guests</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories" class="stories container">
+        <div class="section-heading">
+          <p class="eyebrow">Every stay has a story</p>
+          <h2>Luxury, warmth, and thoughtful details</h2>
+        </div>
+        <div class="story-grid">
+          <article>
+            <h3>Exceptional Luxury</h3>
+            <p>Curated with warmth, design, and care where every villa feels personal.</p>
+          </article>
+          <article>
+            <h3>Sustainable Approach</h3>
+            <p>Thoughtful materials, glass bottles, bamboo, and natural fabrics.</p>
+          </article>
+          <article>
+            <h3>Signature Touches</h3>
+            <p>Welcome gifts, personalised experiences, and parting surprises.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="quick-actions" aria-label="Quick contact actions">
+      <a class="quick-action whatsapp" href="https://wa.me/919220832244" target="_blank" rel="noopener" aria-label="Contact via WhatsApp">✆</a>
+      <a class="quick-action phone" href="tel:+919220832244" aria-label="Call us">☎</a>
+    </div>
+
+    <footer id="contact" class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>ELIVAAS</h3>
+          <p>Your second home becomes a curated escape expertly managed and beautifully maintained.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <a href="#">Villas</a>
+          <a href="#">Offers</a>
+          <a href="#">Stories</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:hello@elivaas.com">hello@elivaas.com</a>
+          <a href="tel:+919220832244">+91 92208 32244</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="return-policy.html">Return Policy</a>
+          <a href="terms-and-conditions.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
