@@ -19,6 +19,10 @@ body {
   line-height: 1.6;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
   width: 100%;
@@ -27,7 +31,7 @@ img {
 }
 
 .container {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1400px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -79,22 +83,43 @@ img {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.20rem;
   font-size: 1.4rem;
   font-weight: 800;
-  letter-spacing: 0.2em;
   color: white;
   text-decoration: none;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-links {
   display: flex;
   gap: 1.25rem;
+  align-items: center;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+}
+
+.call-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.call-book i {
+  font-size: 0.95rem;
 }
 
 .hero-content {
@@ -396,21 +421,105 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 58px;
+  height: 58px;
+  border: none;
   border-radius: 50%;
   color: white;
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(0,0,0,0.16);
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .quick-action.whatsapp {
   background: #25D366;
 }
 
-.quick-action.phone {
+.quick-action.email {
   background: #b07a3d;
+}
+
+.enquiry-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.enquiry-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.enquiry-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 14, 18, 0.62);
+}
+
+.enquiry-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(420px, 100%);
+  background: #fffdf9;
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.enquiry-modal-dialog h3 {
+  margin: 0 0 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #f2ebdf;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.enquiry-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.enquiry-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.enquiry-form input {
+  width: 100%;
+  border: 1px solid rgba(31, 36, 48, 0.2);
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+}
+
+.submit-btn {
+  border: none;
+  background: #b07a3d;
+  color: white;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .footer {

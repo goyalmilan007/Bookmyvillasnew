@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ELIVAAS — Luxury Villas & Escapes</title>
+    <title>BOOKMYVILLAS</title>
     <meta
       name="description"
       content="Luxury villas, curated stays, and seamless experiences for your next escape."
@@ -14,24 +14,36 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="hero">
       <div class="hero-slider" aria-label="Featured destination slides">
-        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="hero-slide active" style="background-image: url('Images/slider/slider-01.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('Images/slider/slider-02.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('Images/slider/slider-03.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('Images/slider/slider-04.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('Images/slider/slider-05.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('Images/slider/slider-06.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('Images/slider/slider-07.jpg');"></div>
       </div>
       <div class="hero-overlay"></div>
 
       <nav class="nav container">
-        <a class="brand" href="#">ELIVAAS</a>
+        <a class="brand" href="#">
+          <img src="Images/logo/logo.png" alt="BOOKMYVILLAS logo" class="brand-logo" />
+          <span>BOOKMYVILLAS</span>
+        </a>
         <div class="nav-links">
+          <a class="call-book" href="tel:+919929638961">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>Call to Book +91 9929638961</span>
+          </a>
           <a href="#villas">Villas</a>
           <a href="#offers">Offers</a>
           <a href="#stories">Stories</a>
-          <a href="#contact">Contact</a>
+          <a href="#contact">Customer Support</a>
         </div>
       </nav>
 
@@ -71,6 +83,11 @@
         <button class="dot active" data-slide="0" aria-label="Show slide 1"></button>
         <button class="dot" data-slide="1" aria-label="Show slide 2"></button>
         <button class="dot" data-slide="2" aria-label="Show slide 3"></button>
+        <button class="dot" data-slide="3" aria-label="Show slide 4"></button>
+        <button class="dot" data-slide="4" aria-label="Show slide 5"></button>
+
+        <button class="dot" data-slide="5" aria-label="Show slide 6"></button>
+        <button class="dot" data-slide="6" aria-label="Show slide 7"></button>
       </div>
     </header>
 
@@ -249,8 +266,39 @@
     </main>
 
     <div class="quick-actions" aria-label="Quick contact actions">
-      <a class="quick-action whatsapp" href="https://wa.me/919220832244" target="_blank" rel="noopener" aria-label="Contact via WhatsApp">✆</a>
-      <a class="quick-action phone" href="tel:+919220832244" aria-label="Call us">☎</a>
+      <a class="quick-action whatsapp" href="https://wa.me/919220832244" target="_blank" rel="noopener" aria-label="Contact via WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      </a>
+      <button class="quick-action email" type="button" aria-label="Send enquiry">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="enquiry-modal" id="enquiryModal" aria-hidden="true">
+      <div class="enquiry-modal-backdrop" data-close-modal="true"></div>
+      <div class="enquiry-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="enquiryTitle">
+        <button class="modal-close" type="button" aria-label="Close enquiry form">×</button>
+        <h3 id="enquiryTitle">Enquiry Form</h3>
+        <form class="enquiry-form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Enter your name" required />
+          </label>
+          <label>
+            Contact Number
+            <input type="tel" name="contactNumber" placeholder="Enter your contact number" required />
+          </label>
+          <label>
+            Email Address
+            <input type="email" name="email" placeholder="Enter your email address" required />
+          </label>
+          <label>
+            Location
+            <input type="text" name="location" placeholder="Enter your preferred location" required />
+          </label>
+          <button type="submit" class="submit-btn">Submit Enquiry</button>
+        </form>
+      </div>
     </div>
 
     <footer id="contact" class="footer">
