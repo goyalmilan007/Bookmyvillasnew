@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/itbrmmur/public_html/
+    - export DEPLOYPATH=/home/itbrmmur/test.bookmyvillas.com/
     - /bin/cp -R * $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH 2>/dev/null || :
