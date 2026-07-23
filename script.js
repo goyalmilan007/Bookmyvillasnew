@@ -8,6 +8,9 @@ const enquiryModal = document.querySelector('#enquiryModal');
 const modalCloseButton = document.querySelector('.modal-close');
 const modalBackdrop = document.querySelector('.enquiry-modal-backdrop');
 const enquiryForm = document.querySelector('.enquiry-form');
+const heroEyebrow = document.querySelector('.eyebrow');
+const heroTitle = document.querySelector('.hero-copy h1');
+const heroLead = document.querySelector('.lead');
 let activeIndex = 0;
 let autoPlay;
 
@@ -21,6 +24,13 @@ function showSlide(index) {
   dots.forEach((dot, dotIndex) => {
     dot.classList.toggle('active', dotIndex === activeIndex);
   });
+
+  const activeSlide = slides[activeIndex];
+  if (activeSlide && heroEyebrow && heroTitle && heroLead) {
+    heroEyebrow.textContent = activeSlide.dataset.eyebrow || heroEyebrow.textContent;
+    heroTitle.textContent = activeSlide.dataset.title || heroTitle.textContent;
+    heroLead.textContent = activeSlide.dataset.lead || heroLead.textContent;
+  }
 }
 
 function startAutoPlay() {
